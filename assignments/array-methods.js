@@ -533,5 +533,20 @@ companyDonations.reverse();
 console.log(companyDonations);
 
 // Problem 2
+const shirtCount = {
+  XS: 0,
+  S: 0,
+  M: 0,
+  L: 0,
+  XL: 0,
+  DXL: 0,
+  TXL: 0
+
+};
+
+runners.forEach(function(shirtSize){
+  let size = runners.this.shirt_size;
+  console.log(size);
+});
 
 // Problem 3
