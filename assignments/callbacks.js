@@ -70,8 +70,35 @@ contains("yo-yo", items, function(itemPresence) {
 
 /* STRETCH PROBLEM */
 
+// removeDuplicates removes all duplicate values from the given array.
+// Pass the duplicate free array to the callback function.
+// Do not mutate the original array.
+
+const dontMutateMe = [
+  "ghost",
+  "apple",
+  "handshake",
+  "milkshake",
+  "apple",
+  "donut",
+  "milkshake",
+  "crocodile",
+  "wizard",
+  "wizard",
+  "wizard",
+  "ghost",
+  "crocodile ghost",
+  "wizard handshake",
+  "wizard"
+];
+
 function removeDuplicates(array, cb) {
-  // removeDuplicates removes all duplicate values from the given array.
-  // Pass the duplicate free array to the callback function.
-  // Do not mutate the original array.
+  const uniqueMutant = new Set(array);
+  const uniqueMutantArray = [...uniqueMutant];
+
+  return cb(uniqueMutantArray);
 }
+
+removeDuplicates(dontMutateMe, function(uniqueArray) {
+  console.log(uniqueArray);
+});

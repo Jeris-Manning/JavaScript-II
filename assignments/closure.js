@@ -24,13 +24,13 @@ function bestColor() {
 // Return a function that when invoked increments and returns a counter variable.
 
 const counter = () => {
-  let clicker = 0;
-  let clickCount = () => {
-    clicker++;
-    console.log(clicker);
-    return clicker;
+  let clickCount = 0;
+  let clicker = () => {
+    clickCount++;
+    console.log(clickCount);
+    return clickCount;
   };
-  return clickCount;
+  return clicker;
 };
 
 // Classic Mouse and Moose counting test
@@ -46,10 +46,6 @@ const counter = () => {
 // mooseCanCount();
 // miceCanCount();
 // miceCanCount();
-
-// Example usage: const newCounter = counter();
-// newCounter(); // 1
-// newCounter(); // 2
 
 // ==== Challenge 3: Create a counter function with an object that can increment and decrement ====
 // Return an object that has two methods called `increment` and `decrement`.

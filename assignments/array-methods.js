@@ -491,50 +491,46 @@ let largeShirts = [];
 
 largeShirts = runners.filter(racer => racer.shirt_size == "L");
 
-largeShirts = runners.filter(function(racer){
-
+largeShirts = runners.filter(function(racer) {
   return racer.shirt_size == "L";
-}
-
-);
+});
 
 console.log(largeShirts);
 
 // // ==== Challenge 4: Use .reduce() ====
 // // The donations need to be tallied up and reported for tax purposes. Add up all the donations into a ticketPriceTotal array and log the result
 
-
 console.log("Donation Total Challenge");
-
- let ticketPriceTotal = runners.reduce((total, runner) => {
-  return total += runner.donation;
+let ticketPriceTotal = [];
+ticketPriceTotal = runners.reduce((total, runner) => {
+  return (total += runner.donation);
 }, 0);
 
-console.log(`Total Donations: ${ticketPriceTotal}`);
+console.log(`Total Donations: ${ticketPriceTotal} Dollars`);
 
 // ==== Challenge 5: Be Creative ====
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to create and then solve 3 unique problems using one or many of the array methods listed above.
 
 // Problem 1
-// Sorting the companies by how much they donated for the race. We want to know who the big spenders are!                                                                                                                                           
+// Sorting the companies by how much they donated for the race. We want to know who the big spenders are!
 
 function keyKiller(racer) {
-  
   delete racer.id;
   delete racer.first_name;
   delete racer.last_name;
   delete racer.email;
   delete racer.shirt_size;
-  
+
   return racer;
-};
+}
 
 let companyDonations = runners.map(keyKiller);
 
-companyDonations.sort(function(a, b){return a.donation - b.donation});
+companyDonations.sort(function(a, b) {
+  return a.donation - b.donation;
+});
 companyDonations.reverse();
 console.log(companyDonations);
-
 
 // Problem 2
 
